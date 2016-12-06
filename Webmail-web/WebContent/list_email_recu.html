@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+
+
+    <script src="angular.min.js"></script>
+    <script src="ngScript.js"></script>
+    <script src="mesFonctions.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp"  ng-controller="myCtrl">
+
+<cartemel> </cartemel><br>
+
+    <H4>
+        Liste des Mails reçus <span class="badge" ng-bind="name"></span>
+    </H4>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr><th>Expediteurs</th><th>Sujet</th><th>date</th>
+            </thead>
+            <tbody>
+
+
+
+                <tr ng-repeat="mails in mails">
+
+                    <td>{{mail.lastName}}</td>
+                    <td>{{mail.firstName}}</td>
+                    <td>{{mail.alias}}</td>
+                    <td>{{mail.power}}</td>
+
+                    <td>
+                        <div>
+
+                                <p>
+                                    <a href="/mails/app/mail/${mail.id}/uploadPhoto" class="btn btn-info glyphicon glyphicon-user" role="button"></a>
+
+
+                                    <button ng-click="remove(mail.id)" class="btn btn-danger glyphicon glyphicon-remove" type="submit"></button>
+
+                                </p>
+
+                        </div>
+                    </td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
