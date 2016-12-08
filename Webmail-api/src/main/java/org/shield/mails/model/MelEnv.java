@@ -20,15 +20,17 @@ public class MelEnvoye {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
-	@Column(name="last_name")
-	private String lastName;
-	@Column(name="photo")
-	private byte[] photo;
+	@Column(name="IdEnv")
+	private int IdEnv;
+	@Column(name="Destinataire")
+	private String[] Destinataire;
+	@Column(name="SujetEnv")
+	private String[] SujetEnv;
+	@Column(name="TextEnv")
+	private String[] TextEnv;
+	@Column(name="PieceJointeEnv")
+	private byte[] PieceJointeEnv;
 
-	
-	@ManyToOne
-	@JsonBackReference
-	private User user;
 	
 	public int getId() {
 		return id;
@@ -36,31 +38,36 @@ public class MelEnvoye {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getLastName() {
-		return lastName;
+	public int getIdEnv() {
+		return IdEnv;
 	}
-	public void setLastName(String lastName) {
-	this.lastName = lastName;
+	public void setIdEnv(int idEnv) {
+		IdEnv = idEnv;
 	}
-		@JsonIgnore
-	public byte[] getPhoto() {
-		return photo;
+	public String[] getDestinataire() {
+		return Destinataire;
 	}
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
+	public void setDestinataire(String[] destinataire) {
+		Destinataire = destinataire;
 	}
-	public User getUser() {
-		return user;
+	public String[] getSujetEnv() {
+		return SujetEnv;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setSujetEnv(String[] sujetEnv) {
+		SujetEnv = sujetEnv;
+	}
+	public String[] getTextEnv() {
+		return TextEnv;
+	}
+	public void setTextEnv(String[] textEnv) {
+		TextEnv = textEnv;
+	}
+	public byte[] getPieceJointeEnv() {
+		return PieceJointeEnv;
+	}
+	public void setPieceJointeEnv(byte[] pieceJointeEnv) {
+		PieceJointeEnv = pieceJointeEnv;
 	}
 	
-	@JsonIgnore
-	public String getImageBase64() {
-		return "data:image/png;base64,"+Base64.encodeBase64String(photo);
-	}
-
-		
-
+	
 }

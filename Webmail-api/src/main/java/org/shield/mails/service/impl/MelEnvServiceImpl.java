@@ -11,31 +11,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-@Service("melService")
-public class MelEnvServiceImpl implements MelRecService {
+@Service("melEnvService")
+public class MelEnvServiceImpl implements MelEnvService {
 	
 	@Autowired
-	private MelEnvDAO meldao;
+	private MelEnvDAO melEnvdao;
 	
 	@Autowired
 	private UserDAO userDAO;
 
-	public Mel getMel(int id) {
-		return meldao.getById(id);
+	public Mel getMelEnv(int id) {
+		return melEnvdao.getById(id);
 	}
 
-	public void save(Mel mel) {
+	public void saveEnv(MelEnv melEnv) {
 		User user = userDAO.getById(10);
 		//mel.setUser(user);
-		meldao.save(mel);
+		melEnvdao.save(melEnv);
 	}
 
-	public void delete(Integer id) {
-		meldao.delete(id);
+	public void deleteEnv(Integer id) {
+		melEnvdao.delete(id);
 	}
 
-	public List<Mel> findAll() {
-		return meldao.findAll();
+	public List<MelEnv> findAll() {
+		return melEnvdao.findAll();
 	}
 
 }

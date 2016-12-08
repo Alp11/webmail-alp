@@ -18,15 +18,15 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
-	@Column(name="last_name")
-	private String lastName;
+
+	@Column(name="Nom")
+	private String Nom;
 	
-	@Column(name="photo")
-	private byte[] photo;
+	@Column(name="MotDePasse")
+	private String MotDePasse;
 	
-	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
-	@JsonManagedReference
-	private Set<Mel> mels;
+	@Column(name="IdUser")
+	private int IdUser;
 
 	public int getId() {
 		return id;
@@ -36,30 +36,30 @@ public class User {
 		this.id = id;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getNom() {
+		return Nom;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setNom(String nom) {
+		Nom = nom;
 	}
 
-	public byte[] getPhoto() {
-		return photo;
+	public String getMotDePasse() {
+		return MotDePasse;
 	}
 
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
+	public void setMotDePasse(String motDePasse) {
+		MotDePasse = motDePasse;
 	}
 
-	public Set<Mel> getMels() {
-		return mels;
+	public int getIdUser() {
+		return IdUser;
 	}
 
-	public void setMels(Set<Mel> mels) {
-		this.mels = mels;
+	public void setIdUser(int idUser) {
+		IdUser = idUser;
 	}
-	
-	
+
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
 
 }

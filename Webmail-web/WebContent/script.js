@@ -13,9 +13,7 @@ var callback = function() {
         console.log(mel.lastName);
         document.getElementById("lastname").innerHTML = mel.lastName;
         document.getElementById("firstname").innerHTML = mel.firstName;
-        document.getElementById("power").innerHTML = mel.power;
-        document.getElementById("alias").innerHTML = mel.alias;
-
+ 
     }
 
 }
@@ -36,9 +34,7 @@ var callbackSave = function() {
 var saveMel = function() {
     var mel ={
                     alias:document.getElementById("aliasInput").value,
-                    power:document.getElementById("powerInput").value,
                     firstName:document.getElementById("firstNameInput").value,
-                    lastName:document.getElementById("lastNameInput").value
 
                 };
 

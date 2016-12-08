@@ -46,16 +46,10 @@
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" id="saveMel" class="btn btn-primary">Envoyer</button>
-                <button type="button" id="annulMel" class="btn btn-danger">Annuler</button>
-            </div>
-                              
-        </div>
         
-             <fieldset>
+         <fieldset>
 					<!-- Form Name -->
-					<legend>Ajouter un objet</legend>
+					<legend >Ajouter un objet</legend>
 					<!-- File Button --> 
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="filebutton">File Button</label>
@@ -64,6 +58,15 @@
 					  </div>
 					</div>
 			</fieldset>
+			
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" id="saveMel" class="btn btn-primary">Envoyer</button>
+                <button type="button" id="annulMel" class="btn btn-danger">Annuler</button>
+            </div>
+                              
+        </div>
+        
+            
     </form>
     
                 

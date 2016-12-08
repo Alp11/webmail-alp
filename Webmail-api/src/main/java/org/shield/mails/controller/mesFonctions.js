@@ -7,7 +7,8 @@ var init = function(Monscope, Monhttp) {
 
     var url = 'http://localhost:8080/Webmail-api/app/rest/mails/';
     Monhttp.get(url).then(function(resp) {
-        Monscope.mels = resp.data;
+        Monscope.melRec = resp.data;
+        Monscope.melEnv = resp.data;
         Monscope.size = resp.data.length;
     });
 }

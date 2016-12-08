@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-@Service("melService")
+@Service("melRecService")
 public class MelRecServiceImpl implements MelRecService {
 	
 	@Autowired
-	private MelRecDAO meldao;
+	private MelDAO meldao;
 	
 	@Autowired
 	private UserDAO userDAO;
@@ -27,7 +27,7 @@ public class MelRecServiceImpl implements MelRecService {
 	public void save(MelRec melRec) {
 		User user = userDAO.getById(10);
 		//mel.setUser(user);
-		melRecdao.save(mel);
+		melRecdao.save(melRec);
 	}
 
 	public void delete(Integer id) {

@@ -6,12 +6,13 @@ import org.shield.mails.model.Mel;
 
 public interface MelEnvService {
 	
-	public Mel getMel(int id);
+	public MelEnv getMelEnv(int id);
 	
-	public void save(Mel mel);
+	public void saveEnv(MelEnv melEnv);
 	
-	public void delete(Integer id);
+	public void deleteEnv(Integer id);
 
-	public List<Mel> findAll();
+	public List<MelEnv> findAll();
 
 }
+

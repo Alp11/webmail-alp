@@ -1,24 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Magister - Free html5 template by GetTemplate</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap itself -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/magister.css">
+
+	<!-- Fonts -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jQuery TE | Downloaded Demo | v.1.4.0</title>
+    <link type="text/css" rel="stylesheet" href="assets/jquery-te-1.4.0.css">
+
+    <script type="text/javascript" src="assets/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="assets/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+    <script src="assets/angular.min.js"></script>
+    <script src="assets/angular-sanitize.min.js"></script>
+    
+    <script src="ngScript.js"></script>
+	<script src="directives/rich-editor.js"></script>
 </head>
-<body>
 
-<!-- <div>
-    Nom : <label id="lastname"> </label><br>
-    prenom : <label id="firstname" > </label><br>
-  	Mail : <label id="alias"> </label><br>
-</div>
+<!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
+<body class="theme-invert">
 
-<input id="idMel">
-<button id="loadMel"> Rechercher</button> -->
+<nav class="mainmenu">
+	<div class="container">
+		<div class="dropdown">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#head" class="active">Hello</a></li>
+				<li><a href="#new">Nouveau Mail</a></li>
+				<li><a href="#recu">Mails reçus</a></li>
+				<li><a href="#envoye">Mails envoyés</a></li>
+				<li><a href="#profil">Profil</a></li>
+				<!--  <li><a href="#inscription">Inscription</a></li> -->
+				<!--  <li><a href="#login">Login</a></li> -->
+			</ul>
+		</div>
+	</div>
+</nav>
 
 
+<!-- Main (Home) section -->
+<section class="section" id="head">
+	<div class="container">
 
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+
+				<!-- Site Title, your name, HELLO msg, etc. -->
+				<h1 class="title">Magister</h1>
+				<h2 class="subtitle">Bienvenu sur votre boite mail!</h2>
+
+				<!-- Short introductory (optional) -->
+				<h3 class="tagline">
+					La boite mail V1.1, N'hésitez pas à nous faire un retour sur votre expérience!<br>
+				</h3>
+				
+				<!-- Nice place to describe your site in a sentence or two -->
+				
 <div class="container">
 
   
@@ -29,15 +84,12 @@
                 <input type="text" class="form-control" id="lastNameInput" name="lastName" placeholder="Saisir le Nom ">
             </div>
         </div>--> 
- <h2>Page d'accueil</h2>
+
         <div class="form-group">
           
-            <div class="col-sm-offset-2 col-sm-10">
-           
-                <button type="button" id="saveMel" class="btn btn-lg btn-primary">Ecrire un mail</button>
-                <button type="button" id="saveMel" class="btn btn-lg btn-success">Boite de reception</button>
-                <button type="button" id="saveMel" class="btn btn-lg btn-danger">Boite d'envoi</button>
-                <button type="button" id="saveMel" class="btn btn-lg btn-info ">Profil Utilisateur</button>
+            <div class="col-sm-offset-2 col-sm-6">
+            	<a type="button" id="logUser" class="btn btn-lg btn-primary" href="#login">Déjà membre</a>       
+               <a type="button" id="NewUserRegister" class="btn btn-lg btn-primary" href="#inscription">Nouvel Utilisateur</a>
             </div>
         </div>
     </form>
@@ -45,7 +97,357 @@
 
 
 <script src="script.js"></script>
+				
+			<!-- 
+				<p><a href="/download/" class="btn btn-default btn-lg">Download template now</a></p>
+			 -->	
+			</div> <!-- /col -->
+		</div> <!-- /row -->
+	
+	</div>
+</section>
 
+<!-- Second (Nouveau mail) section -->
+<section class="section" id="new">
+	<div class="container">
+	
+		<h2 class="text-center title">Nouveau mail</h2>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-3 " for="AdresseDestinataireInput">Adresse destinataire:</label>
+            <div class="col-md-9 col-md-offset-0">
+                <input type="text" class="form-control" id="lastNameInput" name="lastName" placeholder="Saisir le destinataire ">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3 " for="firstNameInput">Sujet:</label>
+            <div class="col-sm-9 col-md-offset-0">
+                <input path="firstName" type="text" class="form-control" id="firstNameInput" name = "firstName" placeholder="Saisir le sujet">
+            </div>
+        </div>
+
+         <div class="form-group">
+           <label class="control-label col-sm-3 " for="aliasInput">Text:</label>
+            <div class="col-sm-9">                
+               <!-- <textarea id="NouveauMailText" name = "NouveauMailText" type="textarea" class="form-control" rows="10" placeholder="Saisir text"></textarea>--> 
+
+
+
+<span id="mailEdit" richtext model="value" class="textedit show"></span>
+
+<script src="ngScript.js"></script>
+<script src="directives/rich-editor.js"></script>
+
+
+		<div ng-app="myApp">
+					<span id="mailEdit" richtext model="value" class="textedit show"></span>
+					<script src="ngScript.js"></script>
+					<script src="directives/rich-editor.js"></script>
+		</div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-0 col-sm-10">
+                <button type="button" id="envoyerNewMel" class="btn btn-primary">Envoyer</button>
+                <button type="button" id="annulNewMel" class="btn btn-danger">Annuler</button>
+            </div>
+                              
+        </div>
+        
+             <fieldset>
+					<!-- Form Name -->
+					<legend class="col-md-offset-0">Ajouter un objet</legend>
+					<!-- File Button --> 
+					<div class="form-group">
+					  <label class="col-md-2 control-label" for="filebutton">File Button</label>
+					  <div class="col-md-4">
+					    <input id="filebutton" name="filebutton" class="input-file" type="file">
+					  </div>
+					</div>
+			</fieldset>
+    </form>
+            
+</div>
+
+
+				<ul class="list-inline list-social col-md-offset-4">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link "><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link "><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link "><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+
+<script src="script.js"></script>
+
+			
+		</div>
+	</div>
+</section>
+
+<!-- Third (Mails reçus) section -->
+<section class="section" id="recu">
+	<div class="container">
+	
+		<h2 class="text-center title">Liste des mails reçus</h2>
+		<p class="lead text-center">
+					<div ng-app="myApp"  ng-controller="myCtrl">
+
+<cartemel> </cartemel><br>
+
+    <H4>
+        Liste des Mails reçus <span class="badge" ng-bind="name"></span>
+    </H4>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr><th>Expediteurs</th><th>Sujet</th><th>date</th>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="mails in mails">
+
+                    <td>{{mail.lastName}}</td>
+                    <td>{{mail.firstName}}</td>
+                    <td>{{mail.lastName}}</td>
+
+
+
+                    <td>
+                        <div>
+
+                                <p>
+                                    <a href="/mails/app/mail/${mail.id}/uploadPhoto" class="btn btn-info glyphicon glyphicon-user" role="button"></a>
+
+
+                                    <button ng-click="remove(mail.id)" class="btn btn-danger glyphicon glyphicon-remove" type="submit"></button>
+
+                                </p>
+
+                        </div>
+                    </td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
+</div>
+
+				<ul class="list-inline list-social col-md-offset-4">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link "><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link "><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link "><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+						
+	</div>
+</section>
+
+<!-- Fourth (Mails envoyés) section -->
+<section class="section" id="envoye">
+	<div class="container">
+	
+		<h2 class="text-center title">Liste des mails envoyés</h2>
+
+				<div ng-app="myApp"  ng-controller="myCtrl">
+
+<cartemel> </cartemel><br>
+
+    <H4>
+        Liste des Mails envoyés <span class="badge" ng-bind="name"></span>
+    </H4>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr><th>Destinataire</th><th>Sujet</th><th>date</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mails in mails">
+
+                    <td>{{mail.lastName}}</td>
+                    <td>{{mail.firstName}}</td>
+                    <td>{{mail.lastName}}</td>
+
+                    <td>
+                        <div>
+
+                                <p>
+                                    <a href="/mails/app/mail/${mail.id}/uploadPhoto" class="btn btn-info glyphicon glyphicon-user" role="button"></a>
+                                    <button ng-click="remove(mail.id)" class="btn btn-danger glyphicon glyphicon-remove" type="submit"></button>
+
+                                </p>
+
+                        </div>
+                    </td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
+</div>
+				
+				<ul class="list-inline list-social col-md-offset-4">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link "><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link "><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link "><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+
+</section>
+
+
+
+<!-- Fifth (Profil) section -->
+<section class="section" id="profil">
+	<div class="container">
+	
+		<h2 class="text-center title">Profil</h2>
+		
+		
+		
+		    <h3  class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center subtitle">Profil utilisateur</h3>
+		
+		
+		<div class="container">
+
+  
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1" for="InscriptionUser">Utilisateur:</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="InscriptionUser" name="InscriptionUser" placeholder="Saisir le Nom d'utilisateur">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1" for="InscriptionMail">Mail:</label>
+            <div class="col-md-6">
+                <input path="InscriptionMail" type="email" class="form-control" id="InscriptionMail" name = "InscriptionMail" placeholder="Saisir votre email">
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1"  for="InscriptionMotdePasse">Mot de passe:</label>
+            <div class="col-md-6">
+                <input type="password" class="form-control" name = "InscriptionMotdePasse" id="InscriptionMotdePasse" placeholder="Saisir mot de passe">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-8">
+                <button type="button" id="EditUser" class="btn btn-primary">Modifier</button>
+                <button type="button" id="ReseteditUser" class="btn btn-danger">Annuler</button>
+            </div>
+            
+          
+    </form>
+</div>
+
+
+				<ul class="list-inline list-social col-md-offset-4">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+	
+
+</section>
+
+<!-- sixth (Inscription) section -->
+<section class="section" id="inscription">
+	<div class="container">
+	
+		<h2 class="text-center title">Inscription</h2>
+
+		    <h3  class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center subtitle">Nouvel utilisateur</h3>
+		
+		
+		<div class="container">
+
+  
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1" for="InscriptionUser">Utilisateur:</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="InscriptionUser" name="InscriptionUser" placeholder="Saisir le Nom d'utilisateur">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1" for="InscriptionMail">Mail:</label>
+            <div class="col-md-6">
+                <input path="InscriptionMail" type="email" class="form-control" id="InscriptionMail" name = "InscriptionMail" placeholder="Saisir votre email">
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1"  for="InscriptionMotdePasse">Mot de passe:</label>
+            <div class="col-md-6">
+                <input type="password" class="form-control" name = "InscriptionMotdePasse" id="InscriptionMotdePasse" placeholder="Saisir mot de passe">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-8">
+                <button type="button" id="saveNewUser" class="btn btn-primary">S'inscrire</button>
+                <button type="button" id="resetNewUser" class="btn btn-danger">Annuler</button>
+            </div>
+
+          
+    </form>
+</div>
+		
+				<ul class="list-inline list-social col-md-offset-4">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+
+</section>
+
+<!-- seventh (Login) section -->
+<section class="section" id="login">
+	<div class="container">
+		<h2 class="text-center title">Connection</h2>
+		    <h3  class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center subtitle">Connection utilisateur</h3>
+				<div class="container">
+ 
+     <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1" for="LoginMail">Mail:</label>
+            <div class="col-md-6">
+                <input path="LoginMail" type="LoginMail" class="form-control" id="LoginMail" name = "LoginMail" placeholder="Saisir votre email">
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-1"  for="MotdePasse">Mot de passe:</label>
+            <div class="col-md-6">
+                <input type="password" class="form-control" name = "MotdePasse" id="MotdePasse" placeholder="Saisir mot de passe">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-8">
+                <button type="button" id="ConnectUser" class="btn btn-primary">Se connecter</button>
+                <button type="button" id="resetConnectUser" class="btn btn-danger">Annuler</button>
+            </div>
+
+    </form>
+</div>
+				<ul class="list-inline list-social col-md-offset-4">
+					<li><a href="https://twitter.com/serggg" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/pozhilov" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
+				</ul>
+</section>
+
+
+<!-- Load js libs only when the page is loaded. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="assets/js/modernizr.custom.72241.js"></script>
+<!-- Custom template scripts -->
+<script src="assets/js/magister.js"></script>
 </body>
 </html>
-

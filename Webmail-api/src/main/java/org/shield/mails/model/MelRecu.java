@@ -20,46 +20,54 @@ public class MelRecu {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
-	@Column(name="last_name")
-	private String lastName;
-	@Column(name="photo")
-	private byte[] photo;
-	
-	@ManyToOne
-	@JsonBackReference
-	private User user;
-	
+	@Column(name="IdRec")
+	private int IdRec;
+	@Column(name="Expediteur")
+	private String[] Expediteur;
+	@Column(name="SujetRec")
+	private String[] SujetRec;
+	@Column(name="TextRec")
+	private String[] TextRec;
+	@Column(name="PieceJointeRec")
+	private byte[] PieceJointeRec;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getLastName() {
-		return lastName;
+	public int getIdRec() {
+		return IdRec;
 	}
-	public void setLastName(String lastName) {
-	this.lastName = lastName;
+	public void setIdRec(int idRec) {
+		IdRec = idRec;
 	}
-		@JsonIgnore
-	public byte[] getPhoto() {
-		return photo;
+	public String[] getExpediteur() {
+		return Expediteur;
 	}
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
+	public void setExpediteur(String[] expediteur) {
+		Expediteur = expediteur;
 	}
-	public User getUser() {
-		return user;
+	public String[] getSujetRec() {
+		return SujetRec;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setSujetRec(String[] sujetRec) {
+		SujetRec = sujetRec;
 	}
+	public String[] getTextRec() {
+		return TextRec;
+	}
+	public void setTextRec(String[] textRec) {
+		TextRec = textRec;
+	}
+	public byte[] getPieceJointeRec() {
+		return PieceJointeRec;
+	}
+	public void setPieceJointeRec(byte[] pieceJointeRec) {
+		PieceJointeRec = pieceJointeRec;
+	}
+
 	
-	@JsonIgnore
-	public String getImageBase64() {
-		return "data:image/png;base64,"+Base64.encodeBase64String(photo);
-	}
-
-		
-
+	
+	
 }

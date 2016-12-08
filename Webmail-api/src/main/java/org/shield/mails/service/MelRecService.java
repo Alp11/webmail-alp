@@ -6,12 +6,13 @@ import org.shield.mails.model.Mel;
 
 public interface MelRecService {
 	
-	public Mel getMel(int id);
+	public MelRec getMelRec(int id);
 	
-	public void save(Mel mel);
+	public void saveRec(MelRec melRec);
 	
-	public void delete(Integer id);
+	public void deleteRec(Integer id);
 
-	public List<Mel> findAll();
+	public List<MelRec> findAll();
 
 }
+

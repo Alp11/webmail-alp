@@ -47,8 +47,6 @@
     			<td><img src="${mail.imageBase64}" width="50" height="50"></img></td>
     			<td>${mail.lastName}</td>
     			<td>${mail.firstName}</td>
-    			<td>${mail.alias}</td>
-    			<td>${mail.power}</td>
     			<td>${mail.user.firstName} ${mail.user.lastName}</td>
     			
     			<td> 

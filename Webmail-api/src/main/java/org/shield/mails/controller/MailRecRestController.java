@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rest/mails")
+@RequestMapping("/rest/mailRec")
 public class MailRecRestController {
 
 	@Autowired
-	private MelRecService melService;
+	private MelRecService melRecService;
 		
 	@RequestMapping(method=RequestMethod.GET)
-	public List<Mel> listMels(){
-		return melService.findAll();
+	public List<MelRec> listMelRec(){
+		return melRecService.findAll();
 	}
 	
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
-	public Mel getMel(@PathVariable("id") Integer id){
-		return melService.getMel(id);
+	public MelRec getMelRec(@PathVariable("id") Integer id){
+		return melRecService.getMelRec(id);
 	}
 	
 	//@RequestMapping(value="power/{sup}", method=RequestMethod.GET)
@@ -35,19 +35,19 @@ public class MailRecRestController {
 	//}
 		
 	@RequestMapping(method=RequestMethod.POST)
-	public void add(@RequestBody Mel mel){
-		melService.save(mel);
+	public void addRec(@RequestBody MelRec melRec){
+		melRecService.save(melRec);
 	}
 	
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
-	public void updateMel(@PathVariable("id") Integer id, @RequestBody Mel mel){
-		mel.setId(id);
-		 melService.save(mel);
+	public void updateMelRec(@PathVariable("id") Integer id, @RequestBody MelRec melRec){
+		melRec.setId(id);
+		 melRecService.save(melRec);
 	}
 		
 	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
-	public void deleteMel(@PathVariable("id") Integer id){
-		melService.delete(id);
+	public void deleteMelRec(@PathVariable("id") Integer id){
+		melRecService.delete(id);
 	}
 		
 }

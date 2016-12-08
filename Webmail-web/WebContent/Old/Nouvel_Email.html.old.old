@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jQuery TE | Downloaded Demo | v.1.4.0</title>
+    <link type="text/css" rel="stylesheet" href="assets/jquery-te-1.4.0.css">
+
+    <script type="text/javascript" src="assets/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="assets/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+    <script src="assets/angular.min.js"></script>
+    <script src="assets/angular-sanitize.min.js"></script>
+</head>
+<body>
+
+<!--  <div>
+    Nom : <label id="lastname"> </label><br>
+    prenom : <label id="firstname" > </label><br>
+  	Mail : <label id="alias"> </label><br>
+    Mel : <label id="power"> </label><br>
+</div>
+
+<input id="idMel">
+<button id="loadMel"> Load mel</button>-->
+
+
+
+<div class="container">
+
+    <h2 class="col-md-offset-1">Nouveau mail</h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-3 " for="lastNameInput">Adresse destinataire</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="lastNameInput" name="lastName" placeholder="Saisir le destinataire ">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="firstNameInput">Sujet</label>
+            <div class="col-sm-10">
+                <input path="firstName" type="text" class="form-control" id="firstNameInput" name = "firstName" placeholder="Saisir le sujet">
+            </div>
+        </div>
+
+         <div class="form-group">
+           <label class="control-label col-sm-2" for="aliasInput">Text</label>
+            <div class="col-sm-10">                
+               <!-- <textarea id="NouveauMailText" name = "NouveauMailText" type="textarea" class="form-control" rows="10" placeholder="Saisir text"></textarea>--> 
+
+		<body ng-app="myApp">
+					<span id="mailEdit" richtext model="value" class="textedit show"></span>
+					<script src="ngScript.js"></script>
+					<script src="directives/rich-editor.js"></script>
+		</body>
+           
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" id="saveMel" class="btn btn-primary">Envoyer</button>
+                <button type="button" id="annulMel" class="btn btn-danger">Annuler</button>
+            </div>
+                              
+        </div>
+        
+             <fieldset>
+					<!-- Form Name -->
+					<legend class="col-md-offset-2">Ajouter un objet</legend>
+					<!-- File Button --> 
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="filebutton">File Button</label>
+					  <div class="col-md-4">
+					    <input id="filebutton" name="filebutton" class="input-file" type="file">
+					  </div>
+					</div>
+			</fieldset>
+    </form>
+    
+                
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

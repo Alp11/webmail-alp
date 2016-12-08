@@ -10,8 +10,8 @@
 
 <div class="container">
   
-  <h2>Ajouter un User/mail</h2>
-  <form class="form-horizontal" action="add" method="post">
+  <h2>Ajouter un User</h2>
+  <form class="form-horizontal" action="addUser" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="lastName">Nom:</label>
       <div class="col-sm-10">
@@ -38,10 +38,8 @@
         <button type="submit" class="btn btn-default">S'inscrire</button>
       </div>
     </div>
-    
-    
-    
-  </form>
+     
+    </form>
 </div>
 
 </body>

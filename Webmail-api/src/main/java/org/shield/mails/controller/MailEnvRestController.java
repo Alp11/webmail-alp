@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class MailEnvRestController {
 
 	@Autowired
-	private MelRecService melService;
+	private MelEnvService melEnvService;
 		
 	@RequestMapping(method=RequestMethod.GET)
-	public List<Mel> listMels(){
-		return melService.findAll();
+	public List<MelEnv> listMelEnv(){
+		return melEnvService.findAll();
 	}
 	
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
-	public Mel getMel(@PathVariable("id") Integer id){
-		return melService.getMel(id);
+	public Mel getMelEnv(@PathVariable("id") Integer id){
+		return melEnvService.getMelEnv(id);
 	}
 	
 	//@RequestMapping(value="power/{sup}", method=RequestMethod.GET)
@@ -35,19 +35,19 @@ public class MailEnvRestController {
 	//}
 		
 	@RequestMapping(method=RequestMethod.POST)
-	public void add(@RequestBody Mel mel){
-		melService.save(mel);
+	public void add(@RequestBody MelEnv melEnv){
+		melEnvService.save(melEnv);
 	}
 	
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
-	public void updateMel(@PathVariable("id") Integer id, @RequestBody Mel mel){
-		mel.setId(id);
-		 melService.save(mel);
+	public void updateMelEnv(@PathVariable("id") Integer id, @RequestBody MelEnv melEnv){
+		melEnv.setId(id);
+		 melEnvService.save(melEnv);
 	}
 		
 	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
-	public void deleteMel(@PathVariable("id") Integer id){
-		melService.delete(id);
+	public void deleteMelEnv(@PathVariable("id") Integer id){
+		melEnvService.delete(id);
 	}
 		
 }

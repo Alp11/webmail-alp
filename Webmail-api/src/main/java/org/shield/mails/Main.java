@@ -14,10 +14,10 @@ public class Main {
 		ApplicationContext appContext = 
 	    		new ClassPathXmlApplicationContext("spring/config/application-context.xml");
 			
-		Mel mel = new Mel();
-		mel.setLastName("STARK");
+		MelRec melRec = new MelRec();
+		melRec.setLastName("STARK");
 		
-		MelRecService melService = (MelRecService) appContext.getBean("melService");
+		MelRecService melRecService = (MelRecService) appContext.getBean("melRecService");
 		
 		UserService userService = (UserService) appContext.getBean("userService");
 		
@@ -29,16 +29,13 @@ public class Main {
 		
 		System.out.println("Liste des mels : ");
 		
-		for(Mel mel1 : userFury.getMels()) {
+		for(MelRec mel1 : userFury.getMelRec()) {
 			System.out.println("----- " + mel1.getAlias());
 		}
 		
-		Mel melToDelete = melService.getMel(70);
+		MelRec melRecToDelete = melRecService.getMelRec(70);
 		
-		melService.delete(melToDelete.getId());
-		
-		
-		
+		melRecService.delete(melRecToDelete.getId());
 		
 	}
 
